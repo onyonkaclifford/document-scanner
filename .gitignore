@@ -1,0 +1,17 @@
+#  IDE
+.idea/
+.idea/*
+.spyproject*
+.spyproject/*
+
+# Pycache
+__pycache__*
+*.pyc
+__pycache__/
+
+# Python virtual environment
+venv/
+
+# Development assets
+assets/
+main.py
