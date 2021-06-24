@@ -1,4 +1,4 @@
-imutils==0.5.3
-opencv-python==4.5.1.48
-pytesseract==0.3.7
+imutils~=0.5.4
+opencv-python~=4.5.2.54
+pytesseract~=0.3.7
 scipy==1.5.4  # Undocumented requirement for imutils
