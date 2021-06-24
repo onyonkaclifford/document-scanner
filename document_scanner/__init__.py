@@ -10,6 +10,7 @@ class DocumentScanner:
     def get_image(image_path: str, resize_width: int = None):
         """
         Get image array from image path
+
         :param image_path: location of image
         :param resize_width: if not None image is resized to this width, else no resize
         :return: tuple of 2 image arrays, (bgr image, rgb image)
@@ -29,6 +30,7 @@ class DocumentScanner:
         """
         Combines all processing steps to ready image for text extraction.
         Returned image retains colour channels format of image passed as argument.
+
         :param image: image to be processed
         :return: processed image ready for text extraction
         """
@@ -41,6 +43,7 @@ class DocumentScanner:
     def get_text(aligned_image_rgb: np.ndarray, config="--psm 4"):
         """
         Text extraction. Colour channels format of image passed needs to be rgb.
+
         :param aligned_image_rgb: processed image that's ready for text extraction
         :param config: pytesseract image_to_string config
         :return: extracted text
@@ -51,6 +54,7 @@ class DocumentScanner:
     def get_edged_image(image: np.ndarray, ksize=(5, 5), threshold1=75, threshold2=200):
         """
         Highlight edges in the image
+
         :param image: image to be edged
         :param ksize: gaussian blur kernel size
         :param threshold1: Canny algorithm value for edge linking
@@ -65,6 +69,7 @@ class DocumentScanner:
     def get_contours(edged_image: np.ndarray):
         """
         Returns contours
+
         :param edged_image: image that's been edged
         :return: contours
         """
@@ -78,6 +83,7 @@ class DocumentScanner:
     def get_document_outline(contours):
         """
         Returns the outline of the document's edge
+
         :param contours: contours within the image
         :return: document outline
         """
@@ -95,6 +101,7 @@ class DocumentScanner:
     def get_aligned_document(image: np.ndarray, document_outline):
         """
         Crops the document from the background and aligns it orthogonally to the viewer
+
         :param image: original image
         :param document_outline: outline of the document
         :return: aligned document
