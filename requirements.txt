@@ -1,5 +1,5 @@
 imutils~=0.5.4
-numpy~=1.21.0
+numpy~=1.19.5
 opencv-python~=4.5.2.54
 pytesseract~=0.3.7
 pytest~=6.2.4
