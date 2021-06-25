@@ -4,4 +4,4 @@ opencv-python~=4.5.2.54
 pytesseract~=0.3.7
 pytest~=6.2.4
 pytest-cov~=2.12.1
-scipy==1.7.0  # Undocumented requirement for imutils
+scipy~=1.5.4 # Undocumented requirement for imutils
