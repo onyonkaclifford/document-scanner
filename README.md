@@ -1,3 +1,5 @@
+![ci workflow](https://github.com/onyonkaclifford/document-scanner/actions/workflows/ci.yml/badge.svg)
+
 # Document scanner
 Extract text from photos
 
