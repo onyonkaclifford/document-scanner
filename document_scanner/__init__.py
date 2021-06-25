@@ -1,11 +1,10 @@
 import cv2
-import pytesseract
 import numpy as np
+import pytesseract
 from imutils.perspective import four_point_transform
 
 
 class DocumentScanner:
-
     @staticmethod
     def get_image(image_path: str, resize_width: int = None):
         """
@@ -20,9 +19,15 @@ class DocumentScanner:
             h, w = image.shape[:2]
             ratio = resize_width / float(w)
             if resize_width < w:
-                image = cv2.resize(image, (resize_width, int(h * ratio)), interpolation=cv2.INTER_AREA)
+                image = cv2.resize(
+                    image, (resize_width, int(h * ratio)), interpolation=cv2.INTER_AREA
+                )
             elif resize_width > w:
-                image = cv2.resize(image, (resize_width, int(h * ratio)), interpolation=cv2.INTER_LINEAR)
+                image = cv2.resize(
+                    image,
+                    (resize_width, int(h * ratio)),
+                    interpolation=cv2.INTER_LINEAR,
+                )
         return image, cv2.cvtColor(image.copy(), cv2.COLOR_BGR2RGB)
 
     @staticmethod
@@ -48,7 +53,9 @@ class DocumentScanner:
         :param config: pytesseract image_to_string config
         :return: extracted text
         """
-        return pytesseract.image_to_string(cv2.cvtColor(aligned_image_rgb, cv2.COLOR_BGR2RGB), config=config)
+        return pytesseract.image_to_string(
+            cv2.cvtColor(aligned_image_rgb, cv2.COLOR_BGR2RGB), config=config
+        )
 
     @staticmethod
     def get_edged_image(image: np.ndarray, ksize=(5, 5), threshold1=75, threshold2=200):
@@ -73,7 +80,9 @@ class DocumentScanner:
         :param edged_image: image that's been edged
         :return: contours
         """
-        contours = cv2.findContours(edged_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours = cv2.findContours(
+            edged_image.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
         if len(contours) == 2:
             return contours[0]
         elif len(contours) == 3:  # Support for some versions of cv2

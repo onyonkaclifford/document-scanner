@@ -1,8 +1,10 @@
-import os
 import copy
+import os
+
 import cv2
-import pytest
 import numpy as np
+import pytest
+
 from document_scanner import DocumentScanner
 
 
@@ -33,7 +35,9 @@ def edged_images(images):
 @pytest.fixture
 def contours(edged_images):
     def get_contours(edged_img):
-        contours = cv2.findContours(edged_img.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours = cv2.findContours(
+            edged_img.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
 
         if len(contours) == 2:
             resultant_contours = contours[0]
