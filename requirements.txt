@@ -1,5 +1,5 @@
 imutils~=0.5.4
-numpy~=1.21.0
+numpy~=1.19.5 # Newer versions (>=v1.20.*) don't support python 3.6
 opencv-python~=4.5.2.54
 pre-commit~=2.13.0
 pytesseract~=0.3.7
