@@ -85,8 +85,6 @@ class DocumentScanner:
         )
         if len(contours) == 2:
             return contours[0]
-        elif len(contours) == 3:  # Support for some versions of cv2
-            return contours[1]
 
     @staticmethod
     def get_document_outline(contours):
