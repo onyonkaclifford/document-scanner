@@ -1,6 +1,6 @@
 imutils~=0.5.4
-numpy~=1.19.5
+numpy~=1.21.0
 opencv-python~=4.5.2.54
 pre-commit~=2.13.0
 pytesseract~=0.3.7
-scipy~=1.5.4 # Undocumented requirement for imutils
+scipy~=1.7.0 # Undocumented requirement for imutils
