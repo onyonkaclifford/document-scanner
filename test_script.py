@@ -82,12 +82,16 @@ def test_get_image(image_path):
 
 def test_get_image__resized(image_path):
     img_bgr, img_rgb = DocumentScanner.get_image(image_path, 60)
-
     assert isinstance(img_bgr, np.ndarray)
     assert isinstance(img_rgb, np.ndarray)
-
     assert img_bgr.shape[1] == 60
     assert img_rgb.shape[1] == 60
+
+    img_bgr__big, img_rgb__big = DocumentScanner.get_image(image_path, 600)
+    assert isinstance(img_bgr__big, np.ndarray)
+    assert isinstance(img_rgb__big, np.ndarray)
+    assert img_bgr__big.shape[1] == 600
+    assert img_rgb__big.shape[1] == 600
 
 
 def test_get_image__empty_image_path():
