@@ -3,4 +3,4 @@ numpy~=1.19.5 # Newer versions (>=v1.20.*) don't support python 3.6
 opencv-python~=4.5.2.54
 pre-commit~=2.13.0
 pytesseract~=0.3.7
-scipy~=1.7.0 # Undocumented requirement for imutils
+scipy~=1.5.4 # Undocumented requirement for imutils, newer versions (>=v1.20.*) don't support python 3.6
