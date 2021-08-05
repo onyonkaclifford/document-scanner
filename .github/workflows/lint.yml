@@ -24,5 +24,5 @@ jobs:
         run: |
           seed-isort-config
           isort **/*.py -c -v
-          black --check document_scanner/ test_script.py
-          flake8 document_scanner/ test_script.py
+          black --check document_scanner/ tests/
+          flake8 document_scanner/ tests/

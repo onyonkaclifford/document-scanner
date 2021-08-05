@@ -10,12 +10,12 @@ from document_scanner import DocumentScanner
 
 @pytest.fixture
 def image_path():
-    return os.path.join("test_data", "img.png")
+    return os.path.join("tests", "test_data", "img.png")
 
 
 @pytest.fixture
 def images():
-    img_bgr = cv2.imread(os.path.join("test_data", "img.png"))
+    img_bgr = cv2.imread(os.path.join("tests", "test_data", "img.png"))
     img_rgb = cv2.cvtColor(img_bgr.copy(), cv2.COLOR_BGR2RGB)
     return img_bgr, img_rgb
 
